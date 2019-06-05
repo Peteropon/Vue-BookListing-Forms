@@ -25,7 +25,6 @@ export default {
   name: "BookList",
   data() {
     return {
-      searchInput: '',
       filters: ["bought", "borrowed"],
       holding: "bought",
       title: "All Books",
@@ -34,7 +33,8 @@ export default {
         { title: "Self-Reliance", author: "Ralph Waldo Emerson", finishedReading: true, ownership: "borrowed" },
         { title: "American Gods", author: "Neil Gaiman", finishedReading: false, ownership: "bought" },
         { title: "Amusing Ourselves to Death", author: "Neil Postman", finishedReading: true, ownership: "borrowed" }
-      ]
+      ],
+      searchInput: ''
     };
   },
   computed: {
@@ -44,7 +44,7 @@ export default {
     searchedBooks(){
       const searchFilter = book => {
         return book.title.toLowerCase().match(this.searchInput.toLowerCase())
-      }
+      };
       return _.filter(this.books, searchFilter)
     }
   },
