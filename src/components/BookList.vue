@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>{{title}}</h1>
-    <input type="text" v-modal="searchInput" placeholder="Search Books">
+    <input type="text" v-model="searchInput" placeholder="Search Books">
     <ul>
       <book-item v-for='book in searchedBooks' :key='book.id' :book='book'></book-item>
     </ul>
